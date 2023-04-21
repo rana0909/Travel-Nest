@@ -1,0 +1,34 @@
+
+  <button (click)="navigateToListingDetails()" class="w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
+    <img
+      [src]="data.images.pictureUrl"
+      alt="property"
+      class="w-full max-w-sm h-60"
+    />
+    <div class="px-4 py-2">
+      <div class="py-4 align-middle flex justify-between">
+        <span class="font-semibold text-md">{{ data.name }}</span>
+        <div class="flex">
+          <span class="flex align-middle font-medium mx-2">
+            {{ data.rating.toFixed(1) }}
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="28"
+            viewBox="0 0 24 24"
+            class="ml-[-16px]"
+          >
+            <path
+              fill="#FFD700"
+              d="M12,16.6L7.1,19.8l1.4-5.4L3.4,9.8l5.9-0.5L12,4.5l2.7,5.8l5.9,0.5l-4.1,3.6l1.4,5.4L12,16.6z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="text-xs mb-2 max-h-5">
+        {{ data.description.split(" ").slice(0, 10).join(" ") }}
+      </div>
+    </div>
+  </button>
+

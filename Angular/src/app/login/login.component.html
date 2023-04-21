@@ -1,0 +1,66 @@
+<div class="flex flex-col items-center h-screen justify-center">
+  <div class="flex flex-col mx-auto bg-white shadow-lg rounded-lg py-4 px-12">
+    <a
+      routerLink="/signup"
+      class="decoration-gray-200 text-gray-500 text-xs mb-4 flex align-middle"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+        class="w-4 h-4 mr-1"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+        />
+      </svg>
+      Back to Signup
+    </a>
+    <h1 class="text-3xl font-bold text-center mb-10">Login</h1>
+    <form (ngSubmit)="login(loginform)" #loginform="ngForm" class="text-center">
+      <div class="mb-4">
+        <input
+          type="text"
+          class="border border-gray-400 rounded-md p-2 w-full"
+          placeholder="username"
+          name="username"
+          #username="ngModel"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-10">
+        <input
+          type="password"
+          class="border border-gray-400 rounded-md p-2 w-full"
+          placeholder="password"
+          name="password"
+          #password="ngModel"
+          ngModel
+          required
+        />
+      </div>
+      <div
+        *ngIf="
+          username.invalid &&
+          username.touched &&
+          password.invalid &&
+          password.touched
+        "
+        class="text-red-600 mb-4"
+      >
+        Enter valid Credentials...
+      </div>
+      <input
+        type="submit"
+        class="w-40 text-center bg-red-500 text-white font-medium py-2 px-4 rounded"
+        [disabled]="loginform.invalid"
+        value="Login"
+      />
+    </form>
+  </div>
+</div>
